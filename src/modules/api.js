@@ -1,12 +1,13 @@
+const apiKey = 'cec2ad28447846509e3210207232806'
+
 const apiCalls = (() => {
 	async function fetchData(city) {
 		try {
-			const response = await fetch(
-				`https://api.weatherapi.com/v1/forecast.json?key=cec2ad28447846509e3210207232806&q=${city}&days=7`,
-				{ mode: 'cors' }
-			)
+			const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=7`, {
+				mode: 'cors',
+			})
 			const data = await response.json()
-			const processedData = processData(data)
+			let processedData = processData(data)
 			console.log(processedData)
 		} catch (error) {
 			console.error(error)
@@ -16,7 +17,7 @@ const apiCalls = (() => {
 })()
 
 function processData(data) {
-	const processedData = {
+	let processedData = {
 		location: {
 			country: data.location.country,
 			localtime: data.location.localtime,
@@ -35,7 +36,7 @@ function processData(data) {
 		},
 		forecast: [],
 	}
-	const forecast = data.forecast.forecastday
+	let forecast = data.forecast.forecastday
 	forecast.forEach(forecast => {
 		processedData.forecast.push({
 			date: forecast.date,
