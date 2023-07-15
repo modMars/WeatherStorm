@@ -4,6 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>WeatherStorm</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&family=Rubik:wght@400;500;600&display=swap');
+		</style>
+		<script src="https://kit.fontawesome.com/d57f01c9bf.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -13,12 +17,33 @@
 				</ul>
 			</nav>
 			<main>
-				<section class="weather-container">
-					<form class="weather-container__form" action="">
-						<label for="cityInput">Location</label>
-						<input type="text" id="cityInput" />
-						<input type="submit" value="Submit" />
+				<section class="first-section">
+					<div class="current">
+						<h2 class="current__city"></h2>
+						<h3 class="current__region"></h3>
+						<h3 class="current__temp"></h3>
+						<div class="condition-container">
+							<h3 class="current__condition"></h3>
+							<img class="current__condition-img" />
+						</div>
+					</div>
+					<form action="">
+						<div class="input-wrapper">
+							<button type="submit" class="fa-solid fa-magnifying-glass"></button>
+							<input type="text" id="city-input" autocomplete="off" placeholder="Location" />
+						</div>
 					</form>
+				</section>
+				<section class="second-section">
+					<div class="date-widget">
+						<h3 class="current__time"></h3>
+						<h3 class="current__day"></h3>
+					</div>
+				</section>
+				<section class="third-section">
+					<div class="forecast-item">
+						<h3></h3>
+					</div>
 				</section>
 			</main>
 			<footer></footer>

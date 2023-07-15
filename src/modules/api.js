@@ -1,3 +1,6 @@
+import moment from 'moment'
+import { refreshDisplay } from './dom'
+import { getDay } from './misc'
 const apiKey = 'cec2ad28447846509e3210207232806'
 
 const apiCalls = (() => {
@@ -9,18 +12,26 @@ const apiCalls = (() => {
 			const data = await response.json()
 			let processedData = processData(data)
 			console.log(processedData)
+			//
+
+			//
+			refreshDisplay(processedData)
 		} catch (error) {
-			console.error(error)
+			console.error("Couldn't fetch data: ", error.name)
 		}
 	}
 	return { fetchData }
 })()
 
 function processData(data) {
+	let split = data.location.localtime.split(' ')
+	let date = split[0]
+	let time = split[1]
 	let processedData = {
 		location: {
 			country: data.location.country,
-			localtime: data.location.localtime,
+			localtime: time,
+			localdate: moment(date).format('dddd, LL'),
 			name: data.location.name,
 			region: data.location.region,
 			tz_id: data.location.tz_id,
@@ -39,7 +50,7 @@ function processData(data) {
 	let forecast = data.forecast.forecastday
 	forecast.forEach(forecast => {
 		processedData.forecast.push({
-			date: forecast.date,
+			localdate: moment(forecast.date).format('dddd, LL'),
 			maxtemp: forecast.day.maxtemp_c,
 			mintemp: forecast.day.mintemp_c,
 			condition: forecast.day.condition.text,
