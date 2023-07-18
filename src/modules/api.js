@@ -1,24 +1,19 @@
 import moment from 'moment'
-import { refreshDisplay } from './dom'
-import { getDay } from './misc'
+import { errorPopup, refreshDisplay } from './dom'
 const apiKey = 'cec2ad28447846509e3210207232806'
 
 const apiCalls = (() => {
+	//Fetch WeatherAPI data
 	async function fetchData(city) {
 		try {
 			const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=7`, {
 				mode: 'cors',
 			})
 			const data = await response.json()
-			console.log('Unprocessed data: ', data)
 			let processedData = processData(data)
-			console.log(processedData)
-			//
-
-			//
 			refreshDisplay(processedData)
 		} catch (error) {
-			console.error("Couldn't fetch data: ", error.name)
+			errorPopup(error)
 		}
 	}
 	return { fetchData }
