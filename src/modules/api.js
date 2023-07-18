@@ -10,6 +10,7 @@ const apiCalls = (() => {
 				mode: 'cors',
 			})
 			const data = await response.json()
+			console.log('Unprocessed data: ', data)
 			let processedData = processData(data)
 			console.log(processedData)
 			//
@@ -50,7 +51,7 @@ function processData(data) {
 	let forecast = data.forecast.forecastday
 	forecast.forEach(forecast => {
 		processedData.forecast.push({
-			localdate: moment(forecast.date).format('dddd, LL'),
+			localdate: moment(forecast.date).format('dddd'),
 			maxtemp: forecast.day.maxtemp_c,
 			mintemp: forecast.day.mintemp_c,
 			condition: forecast.day.condition.text,

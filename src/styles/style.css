@@ -14,16 +14,22 @@
 	display: grid;
 	min-height: 100vh;
 	grid-template-columns: 1fr;
-	grid-template-rows: 0.03fr 1fr;
+	grid-template-rows: 0.07fr 1fr;
 	/* background: url(https://images.unsplash.com/photo-1666605772419-438e95e80708?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80); */
 	background: url(https://images.unsplash.com/photo-1676451774855-41336e3faf0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80);
 	background-size: cover;
 }
 
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 main {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 1fr 0.5fr;
+	grid-template-rows: 1fr 0.8fr;
 	justify-content: center;
 	align-items: center;
 }
@@ -43,6 +49,15 @@ main {
 	align-items: flex-end;
 }
 
+.third-section {
+	width: 100%;
+	height: 100%;
+	grid-column: 1 / 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 form {
 	position: relative;
 	font-family: 'Overpass', sans-serif;
@@ -57,7 +72,7 @@ form {
 	border: none;
 	cursor: pointer;
 	position: absolute;
-	left: calc(50% - -7em);
+	left: 90%;
 	top: calc(50% - 0.5em);
 }
 
@@ -67,6 +82,7 @@ form {
 	width: 100%;
 	height: 30px;
 	padding-left: 6px;
+	opacity: 1;
 }
 
 .input-wrapper {
@@ -165,6 +181,55 @@ form > * {
 }
 
 .third-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: 100%;
+}
+
+.forecast-item {
+	display: flex;
+	flex-direction: column;
+	min-width: 200px;
+	background: rgba(72, 107, 53, 0.4);
+	padding: 20px;
+	border-radius: 8px;
+	color: white;
+	margin: 0 20px;
+}
+
+.forecast-item__localdate {
+	align-self: center;
+	font-size: 2rem;
+	line-height: 1.2;
+	letter-spacing: -1px;
+	font-family: 'Rubik', sans-serif;
+}
+
+.forecast-item__condition {
+	font-size: 1.3rem;
+	font-weight: 400;
+	line-height: 1.5;
+	letter-spacing: -0.3px;
+	align-self: center;
+	font-family: 'Overpass', sans-serif;
+}
+
+.forecast-item > img {
+	width: 80px;
+	align-self: center;
+}
+
+.forecast__temp-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.forecast__temp-wrapper > * {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 500;
+	font-size: 1.3rem;
 }

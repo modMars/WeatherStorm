@@ -12,9 +12,12 @@
 	<body>
 		<div class="wrapper">
 			<nav>
-				<ul>
-					<li><h1 class="navbar__logo"></h1></li>
-				</ul>
+				<form action="">
+					<div class="input-wrapper">
+						<button type="submit" class="fa-solid fa-magnifying-glass"></button>
+						<input type="text" id="city-input" autocomplete="off" placeholder="Location" />
+					</div>
+				</form>
 			</nav>
 			<main>
 				<section class="first-section">
@@ -27,12 +30,6 @@
 							<img class="current__condition-img" />
 						</div>
 					</div>
-					<form action="">
-						<div class="input-wrapper">
-							<button type="submit" class="fa-solid fa-magnifying-glass"></button>
-							<input type="text" id="city-input" autocomplete="off" placeholder="Location" />
-						</div>
-					</form>
 				</section>
 				<section class="second-section">
 					<div class="date-widget">
@@ -40,11 +37,7 @@
 						<h3 class="current__day"></h3>
 					</div>
 				</section>
-				<section class="third-section">
-					<div class="forecast-item">
-						<h3></h3>
-					</div>
-				</section>
+				<section class="third-section"></section>
 			</main>
 			<footer></footer>
 		</div>
