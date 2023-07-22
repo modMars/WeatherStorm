@@ -1,34 +1,27 @@
-# <Project Name>
-
-<!-- WeatherStorm is a weather forecast app
-
 <p align="center"> <img src="./readme_resources/WeatherStorm_%E2%98%94.png"></p>
-<p align="center"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/modMars/WeatherStorm/main?style=flat-square
-"></p> -->
 
 ## Basic Overview
 
-<!-- Are you a <b>book enthusiast</b> that can't get enough? Do you often lose count of how many and what books have you read? Then look no further because this project is perfect for your needs!<br>
-This project consists of a personal library that lets you directly customize a list of books you've already read and the ones you're planning on reading down the road!. -->
+A beautifly designed web weather app
+<br>This project consists of a weather app that lets you see the forecast of the next three days as well as current condition and temperature values.
 
 ## Demo:
 
-<!-- https://user-images.githubusercontent.com/90658669/200039332-aaa50808-9ef1-431e-9b78-f8a6175e24cf.mp4 -->
+
+https://github.com/modMars/WeatherStorm/assets/90658669/8ad5d5f1-9d98-4cbe-9430-5a617ce17926
+
 
 ## Key Features
 
-<!-- - Form that let's the user input the name, author, number of pages and the read status of their favorite book.
-- Remove book entries by directly clicking on a 'remove' button.
-- Update the read status of any book entry by directly clicking on a 'update' button. -->
+- Input that let's the user search for a specific city, country or coordinate's weather information.
+- 3 Day Forecast.
 
 ## Learned / improved concepts
 
-<!-- -Objects
+- Asynchronous programming
 - DOM manipulation
-- HTML Forms
-- preventDefault()
-- Submit event listener -->
-
+- Basic API usage
+  
 ## Things to improve on
 
-<!-- - Responsive Design -->
+- Responsive Design
